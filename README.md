@@ -28,7 +28,7 @@ In order to complete the tasks, it was done the following.
 
    In alldatasorted, each line corresponds to a single measurement of an activity of a subject.
    The next step was to calculate mean and standard deviation by activity and subject.
-   It was used ddply function do summarize and do the calculations.
+   It was used ddply function to summarize and do the calculations.
    The resulting data frame, databySubjectActivity, has 180 lines, 6 lines of activities for each of 30 subjects.
    This file could be considered a tidy data frame if considering a line for each subject and activity.
    The choice was to go on and have a data frame with a single line per subject.
