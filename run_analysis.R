@@ -130,4 +130,6 @@ names(tidydata) <- c("Id","mean_WALKING","stddev_WALKING","mean_WALKING_UPSTAIRS
 ## tidydata contains 30 lines, one for each subject, with the mean and standard deviation
 ##   for each of 6 activities measured
 ##
+## To generate text file
+write.table(tidydata, file = "tidydata.txt", row.names = FALSE)
 
