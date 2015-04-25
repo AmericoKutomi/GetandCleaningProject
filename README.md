@@ -5,6 +5,7 @@ In order to complete the tasks, it was done the following.
 1. Reading the Test Dataset
    The files X_test.txt, Y_test.txt, and subject_test.txt were read using read.fwf because they are text files.
    It was produced one data.frame for each text file.
+   Inertial Signals files were ingnored according to discussion on Forum. The procedures would be almost the same with X_test.txt file.
 2. Merging the Test Dataset into one data frame
    It was created a new data frame using cbind with Subjetcs, Y, and X data frames.
 3. Reading the Train Dataset and Merging the Train Dataset into one data frame
@@ -22,11 +23,10 @@ In order to complete the tasks, it was done the following.
    The resulting data frame, databySubjectActivity, has 180 lines, 6 lines of activities for each of 30 subjects.
    This file could be considered a tidy data frame if considering a line for each subject and activity.
    The choice was to go on and have a data frame with a single line per subject.
-6. Reshaping data to have a single line per subject in the data frame
+6. Reshaping data to have a single line per subject in the data frame: the Tidy Data Set
    The activities in lines were convert into columns in a new data.frame by using reshape function.
-   It was generate the tidydata data frame with 30 lines, corresponding to each Subject.
+   It was generated the tidydata data frame with 30 lines, corresponding to each Subject.
    For each Subject, there are 12 columns for to the 6 activities represented by their mean and standard deviation.
-   It is tidy and normalized data if we consider the 6 activities as the fixed possibilities.
 7. Changing variable names:
    Last operation is to put meaningful names to the variables / columns. The variables are described below.
    
