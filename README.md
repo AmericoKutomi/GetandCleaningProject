@@ -20,50 +20,27 @@ In order to complete the tasks, it was done the following.
    The next step was to calculate mean and standard deviation by activity and subject.
    It was used ddply function do summarize and do the calculations.
    The resulting data frame, databySubjectActivity, has 180 lines, 6 lines of activities for each of 30 subjects.
-6. 
-
-## Converting activities in lines into columns in a new data.frame
-#  The final data.frame is tidy considering each Subject in one single line
-#  It is possible because the set of activities is fixed in 6 items
-#
-## The operation is done using reshape to convert data in lines into columns
-tidydata <- reshape(databySubjectActivity, idvar="Id", timevar="Activity", direction="wide")
-#
-#> str(tidydata)
-#'data.frame':  30 obs. of  13 variables:
-#  $ Id       : int  1 2 3 4 5 6 7 8 9 10 ...
-#$ mean.1   : num  0.277 0.276 0.276 0.279 0.278 ...
-#$ std_dev.1: num  0.0464 0.0513 0.0475 0.0292 0.0508 ...
-#$ mean.2   : num  0.255 0.247 0.261 0.271 0.268 ...
-#$ std_dev.2: num  0.05 0.0595 0.077 0.0626 0.0953 ...
-#$ mean.3   : num  0.289 0.278 0.292 0.28 0.294 ...
-#$ std_dev.3: num  0.0842 0.0803 0.0808 0.0789 0.1027 ...
-#$ mean.4   : num  0.261 0.277 0.257 0.272 0.274 ...
-#$ std_dev.4: num  0.0633 0.0231 0.0866 0.0313 0.0266 ...
-#$ mean.5   : num  0.279 0.278 0.28 0.28 0.283 ...
-#$ std_dev.5: num  0.00799 0.01406 0.02518 0.02843 0.03481 ...
-#$ mean.6   : num  0.222 0.281 0.276 0.264 0.278 ...
-#$ std_dev.6: num  0.1689 0.0242 0.0141 0.0884 0.0322 ...
-#- attr(*, "reshapeWide")=List of 5
-#..$ v.names: NULL
-#..$ timevar: chr "Activity"
-#..$ idvar  : chr "Id"
-#..$ times  : int  1 2 3 4 5 6
-#..$ varying: chr [1:2, 1:6] "mean.1" "std_dev.1" "mean.2" "std_dev.2" ...
-#
-## Last operation is to put meaningful names to the variables
-names(tidydata) <- c("Id","mean_WALKING","stddev_WALKING","mean_WALKING_UPSTAIRS","stddev_WALKING_UPSTAIRS","mean_WALKING_DOWNSTAIRS","stddev_WALKING_DOWNSTAIRS","mean_SITTING","stddev_SITTING","mean_STANDING","stddev_STANDING","mean_LAYING","stddev_LAYING")
-#> str(tidydata)
-#'data.frame':  30 obs. of  13 variables:
-#  $ Id                       : int  1 2 3 4 5 6 7 8 9 10 ...
-#$ mean_WALKING             : num  0.277 0.276 0.276 0.279 0.278 ...
-#$ stddev_WALKING           : num  0.0464 0.0513 0.0475 0.0292 0.0508 ...
-#$ mean_WALKING_UPSTAIRS    : num  0.255 0.247 0.261 0.271 0.268 ...
-#$ stddev_WALKING_UPSTAIRS  : num  0.05 0.0595 0.077 0.0626 0.0953 ...
-#$ mean_WALKING_DOWNSTAIRS  : num  0.289 0.278 0.292 0.28 0.294 ...
-#
-## tidydata contains 30 lines, one for each subject, with the mean and standard deviation
-##   for each of 6 activities measured
-##
-
-
+   This file could be considered a tidy data frame if considering a line for each subject and activity.
+   The choice was to go on and have a data frame with a single line per subject.
+6. Reshaping data to have a single line per subject in the data frame
+   The activities in lines were convert into columns in a new data.frame by using reshape function.
+   It was generate the tidydata data frame with 30 lines, corresponding to each Subject.
+   For each Subject, there are 12 columns for to the 6 activities represented by their mean and standard deviation.
+   It is tidy and normalized data if we consider the 6 activities as the fixed possibilities.
+7. Changing variable names:
+   Last operation is to put meaningful names to the variables / columns. The variables are described below.
+   
+   CODEBOOK:
+   Id: numeric identification of the observed Subject
+   mean_WALKING: mean of the measurements for Walking activity
+   stddev_WALKING: standard deviation of the measurements for Walking activity
+   mean_WALKING_UPSTAIRS: mean of the measurements for Walking Upstairs activity
+   stddev_WALKING_UPSTAIRS: standard deviation of the measurements for Walking Upstairs activity
+   mean_WALKING_DOWNSTAIRS: mean of the measurements for Walking Downstairs activity
+   stddev_WALKING_DOWNSTAIRS: standard deviation of the measurements for Walking Downstairs activity
+   mean_SITTING: mean of the measurements for Sitting activity
+   stddev_SITTING: standard deviation of the measurements for Sitting activity
+   mean_STANDING: mean of the measurements for Standing activity
+   stddev_STANDING: standard deviation of the measurements for Standing activity
+   mean_LAYING: mean of the measurements for Laying activity
+   stddev_LAYING: standard deviation of the measurements for Laying activity
