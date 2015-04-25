@@ -69,7 +69,7 @@ alldata <- rbind(train,test)
 #$ V1: int  5 5 5 5 5 5 5 5 5 5 ...
 #$ V1: num  0.289 0.278 0.28 0.279 0.277 ...
 #
-# Changing variables named V1 to names more significant
+# Changing variables named V1 to more significant names
 names(alldata) <- c('Id','Activity','Measurement')
 #
 library(plyr)
@@ -85,13 +85,13 @@ databySubjectActivity <- ddply(alldata, .(Id, Activity), summarize, mean=mean(Me
 #$ mean    : num  0.277 0.255 0.289 0.261 0.279 ...
 #$ std_dev : num  0.04639 0.04996 0.08416 0.06333 0.00799 ...
 #
-# There are six lines for each subject in the data.frame, corresponding to activities
+# There are six lines for each subject in the data.frame, corresponding to activities: it is the Long Form tidy data set
 #
 ## Converting activities in lines into columns in a new data.frame
 #  The final data.frame is tidy considering each Subject in one single line
 #  It is possible because the set of activities is fixed in 6 items
 #
-## The operation is done using reshape to convert data in lines into columns
+## The operation is done by using reshape to convert data in lines into columns
 tidydata <- reshape(databySubjectActivity, idvar="Id", timevar="Activity", direction="wide")
 #
 #> str(tidydata)
@@ -130,6 +130,6 @@ names(tidydata) <- c("Id","mean_WALKING","stddev_WALKING","mean_WALKING_UPSTAIRS
 ## tidydata contains 30 lines, one for each subject, with the mean and standard deviation
 ##   for each of 6 activities measured
 ##
-## To generate text file
+## To generate the text file to be uploaded
 write.table(tidydata, file = "tidydata.txt", row.names = FALSE)
 
