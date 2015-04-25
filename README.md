@@ -30,11 +30,11 @@ In order to complete the tasks, it was done the following.
    The next step was to calculate mean and standard deviation by activity and subject.
    It was used ddply function to summarize and do the calculations.
    The resulting data frame, databySubjectActivity, has 180 lines, 6 lines of activities for each of 30 subjects.
-   This file could be considered a tidy data frame if considering a line for each subject and activity.
-   The choice was to go on and have a data frame with a single line per subject.
+   This file could be considered a tidy data frame if considering a line for each subject and activity (long form).
 
 6. Reshaping data to have a single line per subject in the data frame: the Tidy Data Set.
 
+   The "wide form" of tidy data set was choosen by generating a data frame with a single line per subject.
    The activities in lines were convert into columns in a new data.frame by using reshape function.
    It was generated the tidydata data frame with 30 lines, corresponding to each Subject.
    For each Subject, there are 12 columns for to the 6 activities represented by their mean and standard deviation.
