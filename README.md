@@ -31,16 +31,16 @@ In order to complete the tasks, it was done the following.
    Last operation is to put meaningful names to the variables / columns. The variables are described below.
    
    CODEBOOK:
-   Id: numeric identification of the observed Subject
-   mean_WALKING: mean of the measurements for Walking activity
-   stddev_WALKING: standard deviation of the measurements for Walking activity
-   mean_WALKING_UPSTAIRS: mean of the measurements for Walking Upstairs activity
-   stddev_WALKING_UPSTAIRS: standard deviation of the measurements for Walking Upstairs activity
-   mean_WALKING_DOWNSTAIRS: mean of the measurements for Walking Downstairs activity
-   stddev_WALKING_DOWNSTAIRS: standard deviation of the measurements for Walking Downstairs activity
-   mean_SITTING: mean of the measurements for Sitting activity
-   stddev_SITTING: standard deviation of the measurements for Sitting activity
-   mean_STANDING: mean of the measurements for Standing activity
-   stddev_STANDING: standard deviation of the measurements for Standing activity
-   mean_LAYING: mean of the measurements for Laying activity
-   stddev_LAYING: standard deviation of the measurements for Laying activity
+   1. Id: numeric identification of the observed Subject
+   2. mean_WALKING: mean of the measurements for Walking activity
+   3. stddev_WALKING: standard deviation of the measurements for Walking activity
+   4. mean_WALKING_UPSTAIRS: mean of the measurements for Walking Upstairs activity
+   5. stddev_WALKING_UPSTAIRS: standard deviation of the measurements for Walking Upstairs activity
+   6. mean_WALKING_DOWNSTAIRS: mean of the measurements for Walking Downstairs activity
+   7. stddev_WALKING_DOWNSTAIRS: standard deviation of the measurements for Walking Downstairs activity
+   8. mean_SITTING: mean of the measurements for Sitting activity
+   9. stddev_SITTING: standard deviation of the measurements for Sitting activity
+   10. mean_STANDING: mean of the measurements for Standing activity
+   11. stddev_STANDING: standard deviation of the measurements for Standing activity
+   12. mean_LAYING: mean of the measurements for Laying activity
+   13. stddev_LAYING: standard deviation of the measurements for Laying activity
